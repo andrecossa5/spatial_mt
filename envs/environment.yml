@@ -1,0 +1,40 @@
+# Reproducible environment for the spatial_mt analysis.
+#
+#   conda env create -f envs/environment.yml
+#   conda activate spatial_mt
+#
+# MiTo is installed from the exact commit that produced the results (the release-2.0.0 line, 2.0.0;
+# its src/ is identical to the current tip of the branch). The pins below are the versions the analysis was run with.
+name: spatial_mt
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      # core scientific stack
+      - numpy==2.4.6
+      - pandas==3.0.5
+      - scipy==1.18.0
+      - statsmodels==0.14.6
+      - scikit-learn==1.9.0
+      - numba==0.66.0
+      - h5py
+      # scverse
+      - anndata==0.13.2
+      - scanpy==1.12.3
+      # plotting
+      - matplotlib==3.11.1
+      - seaborn==0.13.2
+      - pillow==12.3.0
+      - circlify==0.15.1
+      - ac-plotting-ut==0.2.1   # provides `plotting_utils`
+      # graphs, embeddings, phylogenetics
+      - networkx==3.6.1
+      - igraph==1.0.0
+      - leidenalg==0.12.0
+      - umap-learn==0.5.12
+      - cassiopeia-mt==2.1.3
+      - biopython==1.87
+      # MiTo 2.0.0 (release-2.0.0 branch), pinned to a commit
+      - git+https://github.com/andrecossa5/MiTo.git@2fbf851bc098211c7ffdf1b3d924eda53bc83abc

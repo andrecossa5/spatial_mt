@@ -1,0 +1,7 @@
+data/
+figures/
+results/
+scratch/
+
+__pycache__/
+.DS_Store
